@@ -6,7 +6,8 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <sys/time.h>
-
+#include <stdlib.h>
+#include <string>
 
 #ifdef __cplusplus
 extern "C" {
@@ -40,7 +41,7 @@ int main (int argc, char* argv[]) {
     
     int n = atoi(argv[1]);
     int * arr = new int [n];
-    
+    int chunkSize = atoi(argv[4]);
     generateReduceData (arr, atoi(argv[1]));
     
     // insert reduction code here
@@ -72,14 +73,36 @@ int main (int argc, char* argv[]) {
     }
   //  std::chrono::high_resolution_clock::time_point end  = std::chrono::high_resolution_clock::now();
 	gettimeofday(&end, NULL);
+//	std::cerr<<"start"<<std::endl;
+//	std::cerr<<start.tv_sec<<std::endl;
+//	std::cerr<<end.tv_sec<<std::endl;
+//	 std::cerr<<start.tv_usec<<std::endl;
+  //      std::cerr<<end.tv_usec<<std::endl;
+	double st=start.tv_sec;
+        double et=end.tv_sec;
+	double stet= et-st;
+//	std::cerr<<stet<<std::endl;
 
-	double last_time = (end.tv_sec – start.tv_sec + (end.tv_usec - start.tv_usec)/1000000.0); // in seconds
+        double su=start.tv_usec;
+        double eu=end.tv_usec;
+	double tu= (eu-su)/1000000;
+//	std::cerr<<tu<<std::endl;  
+//	std::cerr<<stet + tu<<std::endl;
+
+	double tt= stet+ tu;
+	std::cerr<<tt<<std::endl;
+
+
+
+
+
+	//std::cerr<<(end.tv_sec – start.tv_sec)<<std::endl;// + (end.tv_usec - start.tv_usec)/1000000)<<std::endl; // in seconds
     //std::chrono::duration<double> elapsed_seconds = end-start;
 
-    std::cerr<<last_time<<std::endl;
+//    std::cerr<<last_time<<std::endl;
 
 
     delete[] arr;
-    
+    std::cout<<result<<std::endl;
     return 0;
 }
