@@ -60,7 +60,7 @@ gettimeofday(&start, NULL);
 #pragma omp single
         {
             nbthreads = omp_get_num_threads();
-            temp = new int[nbthreads];
+            val = new int[nbthreads];
         }
         
 #pragma omp for schedule(static)
@@ -71,13 +71,13 @@ gettimeofday(&start, NULL);
         }
         
 #pragma omp critical
-        temp[id] = sum;
+        val[id] = sum;
 
 #pragma omp barrier
         int x = 0;
         for (i=0; i<id; i++)
         {
-            x += temp[i];
+            x += val[i];
         }
 
 #pragma omp for schedule(static)
