@@ -26,8 +26,9 @@ int main (int argc, char* argv[]) {
     return -1;
   }
   
-#pragma omp_set_schedule(omp_sched_static, chunkSize);
-  //forces openmp to create the threads beforehand
+
+
+ //forces openmp to create the threads beforehand
 #pragma omp parallel
   {
     int fd = open (argv[0], O_RDONLY);
@@ -38,6 +39,7 @@ int main (int argc, char* argv[]) {
       std::cerr<<"something is amiss"<<std::endl;
     }
   }
+#pragma omp_set_schedule(omp_sched_static, chunkSize);
   
 omp_set_dynamic(0);
     omp_set_num_threads(atoi(argv[2]));
@@ -103,7 +105,8 @@ gettimeofday(&start, NULL);
 	std::cerr<<tt<<std::endl;
 
   delete[] arr;
-  
+  delete [] pr;
+  delete[] val;
 
   return 0;
 }
