@@ -51,9 +51,9 @@ if (argc < 3) { std::cerr<<"Usage: "<<argv[0]<<" <n> <nbthreads>"<<std::endl;
   //insert sorting code here.
 	gettimeofday(&start, NULL);
    mergeSort(arr, 0, n, nbthreads);
-  
+   gettimeofday(&end,NULL); 
   checkMergeSortResult (arr, n);
-  gettimeofday(&end, NULL);
+//  gettimeofday(&end, NULL);
   
   
   double st=start.tv_sec;
