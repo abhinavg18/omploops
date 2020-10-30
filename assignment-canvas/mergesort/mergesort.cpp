@@ -46,7 +46,7 @@ if (argc < 3) { std::cerr<<"Usage: "<<argv[0]<<" <n> <nbthreads>"<<std::endl;
 
   //insert sorting code here.
 	gettimeofday(&start, NULL);
-   mergeSort(arr, 0, n-1, nbthreads);
+   mergeSort(arr, 0, n, nbthreads);
   
   checkMergeSortResult (arr, n);
   gettimeofday(&end, NULL);
@@ -132,23 +132,16 @@ void mergeSort(int* arr, int l, int r, int nbthreads)
 
     int n=r;
 
-    for(int k = 1; k < n+1;k *= 2)
+    for(int k = 1; k < =n-1;k *= 2)
     {
         #pragma omp parallel for schedule(static, 1)
-        for(int i=0;i < n+1;i += (2*k))
+        for(int i=0;i < n-1;i += (2*k))
         {
-            int left = i;
-            int mid = i + (k-1);
-            int right = i + ((2*k)-1);
-            if(mid >= n)
-            {
-                mid = (i+n-1)/2;
-                right = n-1;
-            }
-            else if(right >= n)
-            {
-                right = n-1;
-            }
+			int mid = Math.min(i + k - 1, n-1);
+         
+                int right_end = Math.min(i 
+                             + 2*k - 1, n-1);
+         
             merge(arr,left,mid,right);
         }
     }
