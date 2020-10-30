@@ -5,6 +5,8 @@
 #include <iostream>
 #include <unistd.h>
 #include <omp.h>
+#include <sys/time.h>
+#include <stdlib.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -17,6 +19,8 @@ extern "C" {
 using namespace std;
 void mergeSort(int* arr, int l, int r, int nbthreads);
 void merge(int* arr, int l, int m, int r);
+
+int min(int x, int y) { return (x<y)? x :y; }
 
 int main (int argc, char* argv[]) {
 
@@ -132,17 +136,17 @@ void mergeSort(int* arr, int l, int r, int nbthreads)
 
     int n=r;
 
-    for(int k = 1; k < =n-1;k *= 2)
+    for(int k = 1; k <= n-1;k *= 2)
     {
         #pragma omp parallel for schedule(static, 1)
         for(int i=0;i < n-1;i += (2*k))
         {
-			int mid = Math.min(i + k - 1, n-1);
+			int mid = min(i + k - 1, n-1);
          
-                int right_end = Math.min(i 
+                int right_end = min(i 
                              + 2*k - 1, n-1);
          
-            merge(arr,left,mid,right);
+            merge(arr,i,mid,right_end);
         }
     }
 }
