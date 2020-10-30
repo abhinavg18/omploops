@@ -26,6 +26,7 @@ int main (int argc, char* argv[]) {
     return -1;
   }
   
+#pragma omp_set_schedule(omp_sched_static, chunkSize);
   //forces openmp to create the threads beforehand
 #pragma omp parallel
   {
