@@ -84,7 +84,7 @@ for(int i=0; i<n; i+=granularity){
 
   double ssec=start.tv_sec;
   double esec=end.tv_sec;
- double secdiff= et-st;
+ double secdiff= esec-ssec;
 double su=start.tv_usec;
         double eu=end.tv_usec;
 	double udiff= (eu-su)/1000000;
