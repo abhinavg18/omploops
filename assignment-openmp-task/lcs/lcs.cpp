@@ -49,7 +49,7 @@ int main (int argc, char* argv[]) {
   generateLCS(X, m, Y, n);
   int nbthreads = atoi(argv[3]);
   omp_set_num_threads(nbthreads);
-  int maxim = max(n,m);
+  int maxim = (n>m)? n : m;
 
   
   //insert LCS code here.
@@ -88,7 +88,7 @@ int main (int argc, char* argv[]) {
 		if (X[k-1] == Y[k-1]){
 				C[k][k] = C[k-1][k-1] + 1;
 		}else{
-			C[k][k] = max(C[k][k-1],C[k-1][k]);
+			C[k][k] = (C[k][k-1]>C[k-1][k])? C[k][k-1] : C[k-1][k];
 		}
 		#pragma omp task shared(X , Y, C, k, maxim)
 	{
@@ -98,7 +98,7 @@ int main (int argc, char* argv[]) {
 			if (X[k-1] == Y[j]){
 					C[k][j] = C[k-1][j-1] + 1;
 			}else{
-				C[k][j] = max(C[k][j-1],C[k-1][j]);
+				C[k][j] = (C[k][j-1]>C[k-1][j])? C[k][j-1] : C[k-1][j];
 			}
 		}
 	}
@@ -110,7 +110,7 @@ int main (int argc, char* argv[]) {
 			if (X[i] == Y[k-1]){
 					C[i][k] = C[i-1][k-1] + 1;
 			}else{
-				C[i][k] = max(C[i][k-1],C[i-1][k]);
+				C[i][k] = (C[i][k-1] > C[i-1][k])? C[i][k-1] : C[i-1][k];
 			}
 		}
 	}
