@@ -4,6 +4,9 @@
 #include <fcntl.h>
 #include <iostream>
 #include <unistd.h>
+#include <sys/time.h>
+#include <stdlib.h>
+#include <omp.h>
 
 #ifdef __cplusplus
 extern "C" {
