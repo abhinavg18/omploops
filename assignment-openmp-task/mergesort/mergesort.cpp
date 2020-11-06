@@ -23,7 +23,7 @@ extern "C" {
 void merge(int * arr, int start, int mid, int end, int * temp) {
 
 
-//if same then stop and return
+
 	if (start == end) return;
 
 	if (end-start == 1) {
@@ -44,9 +44,9 @@ void merge(int * arr, int start, int mid, int end, int * temp) {
 	    temp[start+i] = arr[start+i];
         }
 
-	i = 0;    // left
-	j = mid;  // right
-	k = start;    // merge
+	i = 0;    
+	j = mid;  
+	k = start;    
 
 	// merge
 	while (i<n && j<=end) {
@@ -67,38 +67,18 @@ void merge(int * arr, int start, int mid, int end, int * temp) {
 }
 
 
-void mergesort(int * arr, int start, int end, int n, int * temp) {
-	long g = 250;
+void mergesort(int * arr, int start, int end, int n, int * temp, long g) {
 	
-	if(n<=250)    //try changing the size and get better speed 
-		g = 250;
-	else if(n<1000 && n>=250){
-		g = 5*n*0.1;
-            }
-	else if(n>=1000 && n < 100000){
-		g = 5*n*0.01;
-            }
-	else if(n==100000){
-		g = 5*n*0.01;
-            }
-	else if( n==1000000){
-		g = 5*n*0.001;
-            }
-	else if( n==10000000){
-		g = 5*n*0.0001;
-            }
-	else 
-		g = 5000;
 	
 
 	if (end-start > g) {
 		int mid = (start+end)/2;
 		
 		#pragma omp task
-		mergesort(arr, start, mid, n, temp);
+		mergesort(arr, start, mid, n, temp, g);
 		
 		#pragma omp task
-		mergesort(arr, mid+1, end, n, temp);
+		mergesort(arr, mid+1, end, n, temp, g);
 		
 		#pragma omp taskwait
 		merge(arr, start, mid+1, end, temp);
@@ -107,8 +87,8 @@ void mergesort(int * arr, int start, int end, int n, int * temp) {
 	{
 		if (start < end) {
 		    int mid = (start+end)/2;
-		    mergesort(arr, start, mid, n, temp);
-		    mergesort(arr, mid+1, end, n, temp);
+		    mergesort(arr, start, mid, n, temp, g);
+		    mergesort(arr, mid+1, end, n, temp, g);
 		    merge(arr, start, mid+1, end,temp);
 		}
 	}
@@ -139,6 +119,24 @@ int main (int argc, char* argv[]) {
   int * arr = new int [n];
   generateMergeSortData (arr, n);
   int * temp = new int [n];
+  long g = 500;
+	
+	if(n<=500)    
+		g = 500;	
+	else if(n>500 && n < 100000){
+		g = 5*n*0.01;
+            }
+	else if(n==100000){
+		g = 5*n*0.01;
+            }
+	else if( n==1000000){
+		g = 5*n*0.001;
+            }
+	else if( n==10000000){
+		g = 5*n*0.0001;
+            }
+	else 
+		g = 5000;
   //insert sorting code here.
   struct timeval start, end;
 	gettimeofday(&start, NULL);
@@ -146,7 +144,7 @@ int main (int argc, char* argv[]) {
 	{
 		#pragma omp single
 		{
-			mergesort(arr, 0, n-1, n, temp ); //call mergesort
+			mergesort(arr, 0, n-1, n, temp,g ); //mergesort called here
 		}
 	}
 	gettimeofday(&end, NULL);
