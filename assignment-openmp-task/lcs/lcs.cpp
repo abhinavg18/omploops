@@ -19,8 +19,65 @@ extern "C" {
 #ifdef __cplusplus
 }
 #endif
+int lcsflat( char *X, char *Y, int m, int n , int **L, int start,int end) 
+{ 
+   
+   /* Following steps build L[m+1][n+1] in bottom up fashion. Note  
+ *       that L[i][j] contains length of LCS of X[0..i-1] and Y[0..j-1] */
+       
+       if (start == 0 || end == 0) 
+       {
+        
+         L[start][end] = 0; 
+     
+       }
+   
+       else if (X[start-1] == Y[end-1]) 
+       {
+         L[start][end] = L[start-1][end-1] + 1; 
+       }
+   
+       else
+         {
+             L[start][end] = max(L[start-1][end], L[start][end-1]); 
+      
+        }
+        
+}
+
+int lcsparallel(char* X,char *Y, int m , int n , int **L, int row)
+{
+      //cout<<row<<endl;
+        #pragma omp parallel for schedule(guided) 
+	for(int i =1;i<=row;i++)
+	{
+		if(i!=0&&row-i!=0&&i<=m&&row-i<=n)
+		{
+		        //#pragma omp task	
+			//cout<<i<<" "<<row-i<<endl;
+			lcsflat(X,Y,m,n,L,i,row - i);
+			//cout<<L[i][row-i]<<endl;
+		}
+	}
+
+        #pragma omp taskwait
+	
+	//lcscall(X,Y,m,n,L,1,row);
 
 
+
+        //#pragma omp taskwait
+	
+	if(row > m+n)
+	{
+		//cout<<"return value";
+		cout<<L[m][n]<<endl;
+		return L[m][n];
+	}
+
+	lcsparallel(X,Y,m,n,L,row+1);
+
+}
 
 int main (int argc, char* argv[]) {
 
@@ -54,7 +111,27 @@ int main (int argc, char* argv[]) {
   
   //insert LCS code here.
   int result = -1; // length of common subsequence
-  int C[maxim+1][maxim+1];
+  int **L = new int*[m+1];
+   for(int i = 0;i<=m;i++)
+   {
+      L[i] = new int[n+1];
+      L[i][0] = 0;
+   }
+   for(int i = 0;i<=n;i++)
+	   L[0][i] = 0;
+  int row = 2;
+  #pragma omp parallel
+  {
+    #pragma omp single
+    {
+    //result = lcsnew(X,Y,m,n,nbthreads,L,0,0);
+    result = lcsparallel(X,Y,m,n,L,row);
+    cout<<result;
+    //result = lcs(X,Y,m,n,nbthreads);
+
+    }
+  }
+  /* int C[maxim+1][maxim+1];
     #pragma omp parallel
 	{
 	#pragma omp for
@@ -68,8 +145,10 @@ int main (int argc, char* argv[]) {
 	}
 	}
 	 struct timeval start, end;
+
 	gettimeofday(&start, NULL);
 	
+	}
 	#pragma omp parallel
 	{
 	#pragma omp single
@@ -121,9 +200,7 @@ int main (int argc, char* argv[]) {
 	}
 
 	result = C[m][n];
-	}
-	}
-
+	} */
 	gettimeofday(&end, NULL);
 	double ssec=start.tv_sec;
   double esec=end.tv_sec;
