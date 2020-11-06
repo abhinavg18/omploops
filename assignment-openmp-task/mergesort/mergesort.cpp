@@ -119,12 +119,12 @@ int main (int argc, char* argv[]) {
   int * arr = new int [n];
   generateMergeSortData (arr, n);
   int * temp = new int [n];
-  long g = 500;
+  long g = 250;
 	
 	if(n<=500)    
 		g = 500;	
 	else if(n>500 && n < 100000){
-		g = 5*n*0.01;
+		g = 5*n*0.02;
             }
 	else if(n==100000){
 		g = 5*n*0.01;
