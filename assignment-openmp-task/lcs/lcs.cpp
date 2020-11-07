@@ -78,13 +78,13 @@ int main (int argc, char* argv[]) {
 	{
 
 
-		int granularity = 500;
-		if(n<=10)
+		int granularity = 250;
+		if(maxim<=10)
 			granularity = 10;
-	       else if (n <=100)
+	       else if (maxim <=100)
 			granularity = 50;
 		else 
-			granularity = 5*n*0.01;
+			granularity = 5*maxim*0.01;
 
 
 		if (X[k-1] == Y[k-1]){
@@ -94,7 +94,7 @@ int main (int argc, char* argv[]) {
 		}
 		#pragma omp task shared(X , Y, C, k, maxim)
 	{
-		#pragma omp parallel for schedule(guided)
+		#pragma omp parallel for schedule(guided, granularity)
 		for(int j = k; j<=maxim;j++)
 		{
 			if (X[k-1] == Y[j]){
@@ -106,7 +106,7 @@ int main (int argc, char* argv[]) {
 	}
 	   #pragma omp task shared(X, Y, C, k, maxim) 
 	{ 
-		#pragma omp parallel for schedule(guided)
+		#pragma omp parallel for schedule(guided, granularity)
 		for(int i = k;i<=maxim;i++)
 		{
 			if (X[i] == Y[k-1]){
