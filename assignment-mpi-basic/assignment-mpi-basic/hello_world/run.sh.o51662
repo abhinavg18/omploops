@@ -1,0 +1,64 @@
+[1605563898.788878] [mba-c4:5811 :0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1605563898.788969] [mba-c4:5813 :0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1605563898.788978] [mba-c4:5810 :0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1605563898.788985] [mba-c4:5814 :0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1605563898.788984] [mba-c4:5815 :0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1605563898.788999] [mba-c4:5816 :0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1605563898.789007] [mba-c4:5817 :0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1605563898.789013] [mba-c4:5812 :0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1605563898.785569] [mba-c3:12727:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1605563898.785556] [mba-c3:12728:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1605563898.785564] [mba-c3:12729:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1605563898.785559] [mba-c3:12733:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1605563898.785651] [mba-c3:12730:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1605563898.785614] [mba-c3:12732:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1605563898.785632] [mba-c3:12734:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1605563898.790013] [mba-c1:20578:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1605563898.785696] [mba-c3:12731:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1605563898.790010] [mba-c1:20579:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1605563898.790008] [mba-c1:20580:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1605563898.790015] [mba-c1:20581:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1605563898.790007] [mba-c1:20584:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1605563898.790214] [mba-c1:20577:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1605563898.790231] [mba-c1:20583:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1605563898.790912] [mba-c1:20582:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1605563898.790382] [mba-c5:1797 :0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1605563898.790380] [mba-c5:1798 :0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1605563898.790384] [mba-c5:1801 :0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1605563898.790386] [mba-c5:1804 :0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1605563898.790390] [mba-c5:1799 :0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1605563898.790453] [mba-c5:1800 :0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1605563898.790459] [mba-c5:1802 :0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1605563898.791352] [mba-c5:1803 :0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+I am process 0 out of 32. I am running on mba-c1.uncc.edu
+I am process 1 out of 32. I am running on mba-c1.uncc.edu
+I am process 2 out of 32. I am running on mba-c1.uncc.edu
+I am process 4 out of 32. I am running on mba-c1.uncc.edu
+I am process 6 out of 32. I am running on mba-c1.uncc.edu
+I am process 17 out of 32. I am running on mba-c4.uncc.edu
+I am process 7 out of 32. I am running on mba-c1.uncc.edu
+I am process 16 out of 32. I am running on mba-c4.uncc.edu
+I am process 3 out of 32. I am running on mba-c1.uncc.edu
+I am process 18 out of 32. I am running on mba-c4.uncc.edu
+I am process 5 out of 32. I am running on mba-c1.uncc.edu
+I am process 23 out of 32. I am running on mba-c4.uncc.edu
+I am process 8 out of 32. I am running on mba-c3.uncc.edu
+I am process 20 out of 32. I am running on mba-c4.uncc.edu
+I am process 9 out of 32. I am running on mba-c3.uncc.edu
+I am process 24 out of 32. I am running on mba-c5.uncc.edu
+I am process 21 out of 32. I am running on mba-c4.uncc.edu
+I am process 10 out of 32. I am running on mba-c3.uncc.edu
+I am process 25 out of 32. I am running on mba-c5.uncc.edu
+I am process 22 out of 32. I am running on mba-c4.uncc.edu
+I am process 11 out of 32. I am running on mba-c3.uncc.edu
+I am process 26 out of 32. I am running on mba-c5.uncc.edu
+I am process 19 out of 32. I am running on mba-c4.uncc.edu
+I am process 12 out of 32. I am running on mba-c3.uncc.edu
+I am process 27 out of 32. I am running on mba-c5.uncc.edu
+I am process 13 out of 32. I am running on mba-c3.uncc.edu
+I am process 30 out of 32. I am running on mba-c5.uncc.edu
+I am process 14 out of 32. I am running on mba-c3.uncc.edu
+I am process 31 out of 32. I am running on mba-c5.uncc.edu
+I am process 15 out of 32. I am running on mba-c3.uncc.edu
+I am process 28 out of 32. I am running on mba-c5.uncc.edu
+I am process 29 out of 32. I am running on mba-c5.uncc.edu
