@@ -1,6 +1,11 @@
 #include <iostream>
 #include <chrono>
 
+void handleCudaError(cudaError_t cudaErr){ 
+  if (cudaErr!=cudaSuccess){
+    printf("CUDA ERROR : %s\n", cudaGetErrorString(cudaErr));
+  }
+}
 
 __global__ void polynomial_expansion (float* poly, int degree,
 			   int n, float* array) {
